@@ -1,0 +1,2 @@
+import inhertance
+sample
