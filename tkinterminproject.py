@@ -2,6 +2,7 @@ from tkinter import*
 
 window = Tk()
 window.title("project")
+# img = PhotoImage(file="C:\Users\synnefo1\Desktop\sun\gui\student-list-icon-png.png")
 window.configure(bg="white")
 window.geometry("650x450")
 student_mark_list = Label(window,text="STUDENT MARK LIST",bg="black",fg="white",font=('italic',15),width=20,)
@@ -97,11 +98,43 @@ def display():
     maths_lb1 = Label(window,text="Maths",bg="blue",fg="white",width=20)
     maths_lb1.place(x=30,y=520)
 
+    english_entry1_lb = Label(window,text=""+english_entry1.get(),bg="blue",fg="white",width=20)
+    english_entry1_lb.place(x=175,y=430)
 
+    english_entry2_lb = Label(window,text=""+english_entry2.get(),bg="blue",fg="white",width=20)#grade
+    english_entry2_lb.place(x=310,y=430)
 
+    hindi_entry1_lb = Label(window,text=""+hindi_entry1.get(),bg="blue",fg="white",width=20)#mark
+    hindi_entry1_lb.place(x=175,y=460)
 
+    hindi_entry2_lb = Label(window,text=""+hindi_entry2.get(),bg="blue",fg="white",width=20)
+    hindi_entry2_lb.place(x=310,y=460)
 
+    science_entry1_lb = Label(window,text=""+science_entry1.get(),bg="blue",fg="white",width=20)#mark
+    science_entry1_lb.place(x=175,y=490)
 
+    science_entry2_lb = Label(window,text=""+science_entry2.get(),bg="blue",fg="white",width=20)
+    science_entry2_lb.place(x=310,y=490)
+
+    maths_entry1_lb = Label(window,text=""+maths_entry1.get(),bg="blue",fg="white",width="20")
+    maths_entry1_lb.place(x=175,y=520)
+
+    maths_entry2_lb = Label(window,text=""+maths_entry2.get(),bg="blue",fg="white",width=20)
+    maths_entry2_lb.place(x=310,y=520)
+
+    total_lb = Label(window,text="YOUR TOTAL SCORE:",bg="white",fg="black")
+    total_lb.place(x=30,y=550)
+    total_lb_1 = Label(window,text=(int(english_entry1.get())+int(hindi_entry1.get())+int(science_entry1.get())+int(maths_entry1.get())),bg="white",fg="red")
+    total_lb_1.place(x=150,y=550)
+    
+    percentage_lb = Label(window,text="PERCENTAGE OBTAINED:",bg="white",fg="black")
+    percentage_lb.place(x=30,y=570)
+
+    sum = (int(english_entry1.get())+int(hindi_entry1.get())+int(science_entry1.get())+int(maths_entry1.get()))
+    result = sum*100
+    percentage = result/400
+    percentage_lb_1 = Label(window,text=percentage,fg="red")
+    percentage_lb_1.place(x=150,y=570)
 
 
 b1 = Button(window,text="SUBMIT",bg="blue",fg="white",width=10,activebackground="green",command=display)
